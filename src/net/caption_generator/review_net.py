@@ -114,7 +114,7 @@ class Decoder(chainer.Chain):
 
 
 class ReviewNet(chainer.Chain):
-    def __init__(self, n_class, in_ch, voc_size=100, n_view_steps=8, lam=10,
+    def __init__(self, n_class, in_ch, voc_size=100, n_view_steps=8, loss_balancing=10,
                         feat_dim=512, n_hid=44*44, rnn_size=1096, n_unit=512,
                         sent_len=100):  # 44*44=w*h in fire8
         super().__init__(
@@ -133,7 +133,7 @@ class ReviewNet(chainer.Chain):
         self.rnn_size = rnn_size
         self.n_unit = n_unit
         self.voc_size = voc_size
-        self.lam = lam
+        self.loss_balancing = loss_balancing
 
     def clear(self):
         self.loss = None
@@ -228,6 +228,6 @@ class ReviewNet(chainer.Chain):
         discriminative_loss = self.forward_reviewer(align_source)
         self.forward_decoder(tokens)
 
-        self.loss += self.lam*discriminative_loss
+        self.loss += self.loss_balancing*discriminative_loss
         chainer.report({'loss': self.loss, 'accuracy': self.accuracy}, self)
         return self.loss
