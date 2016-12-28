@@ -5,6 +5,7 @@ import platform
 import inflection
 
 
+# 
 def calculate_in_ch(converse_gray, detect_edge=False):
     in_ch = 1 if converse_gray else 3
     in_ch = in_ch+1 if detect_edge else in_ch

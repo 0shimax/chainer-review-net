@@ -65,7 +65,7 @@ p1_label2trial_label ={
     'PC':'Q',
     'NC':'R',
     'OTH':'R',
-    # 'UI':17,
+    # 'UI':17 ,
     'MEK':'S',
     'ERC':'O',  # TAGがERCと間違えてラベル付けされていたため、ERCも14としている
 }

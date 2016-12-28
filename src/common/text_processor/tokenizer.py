@@ -56,7 +56,7 @@ class Tokenizer(object):
         return np.array(token_ids, dtype=np.int32)
 
     def __loda_dictionary(self):
-        print('loading dictionary from:', self.args.dic_load_path)
+        print('loading dictionary from: ', self.args.dic_load_path)
         return corpora.Dictionary.load(self.args.dic_load_path)
 
     def __load_token(self):

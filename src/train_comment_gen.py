@@ -78,7 +78,7 @@ def prepare_dataset():
 def main(args):
     # load model
     model, model_for_eval = prepare_model(args)
-    print("---set model----------")
+    print("---set model-----------")
 
     # Setup optimizer
     optimizer = prepare_optimizer(model, args)

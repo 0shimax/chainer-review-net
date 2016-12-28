@@ -74,7 +74,7 @@ train_args = \
                        'params': dict(base_params.augmentation_params, **aug_flags),
                       },
         'importance_sampling': False,
-        'shuffle': True,  # data shuffle in SerialIterator
+        'shuffle': True,  #data shuffle in SerialIterator
         'training_params': base_params.trainig_params,
         'token_args': base_params.token_args,
     }

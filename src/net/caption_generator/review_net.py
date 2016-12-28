@@ -184,7 +184,7 @@ class ReviewNet(chainer.Chain):
 
     def forward_decoder(self, tokens):
         '''
-        tokens: [[word11,word12,...,EOS],...,[word n1, word n2...,EOS]] as words in a text
+        tokens:[[word11,word12,...,EOS],...,[word n1, word n2...,EOS]] as words in a text
         '''
         batch_size, n_word = tokens.data.shape
         self.decoder.align_source = self.reviewer.pre_hidden_state

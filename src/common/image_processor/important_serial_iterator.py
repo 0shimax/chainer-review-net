@@ -2,6 +2,7 @@ import numpy
 from chainer.dataset import iterator
 
 
+# 
 class ImportantSerialIterator(iterator.Iterator):
     def __init__(self, dataset, batch_size, repeat=True, shuffle=True, p=None):
         self.dataset = dataset
